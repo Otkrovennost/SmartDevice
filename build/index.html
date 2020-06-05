@@ -18,39 +18,34 @@
   <div class="page-content">
     <h1 class="visually-hidden">SmartDevice</h1>
     <header class="header">
-      <nav class="header__nav nav">
+      <nav class="header__nav nav container">
         <a class="nav__logo" aria-label="Логотип кампании">
           <img src="img/content/logo.svg" width="52" height="52" alt="Логотип SmartDevice">
+          <div class="nav__slogan">
+            <h3>Smart Device</h3>
+            <p>Умные технологии</p>
+          </div>
         </a>
-        <div class="nav__slogan">
-          <h3>Smart Device</h3>
-          <p>Умные технологии</p>
-        </div>
-        <ul class="nav__list">
-          <li class="nav__item">
-            <a class="nav__link" href="mailto:info@sd.ru" aria-label="Написать нам">
-              <svg width="19" height="14">
-                <use xlink:href="img/sprite_auto.svg#icon-letter"></use>
-              </svg>
-              <span>info@sd.ru</span>
-            </a>
-          </li>
-          <li class="nav__item">
-            <a class="nav__link" href="#" aria-label="Позвонить нам">
-              <svg width="18" height="18">
-                <use xlink:href="img/sprite_auto.svg#icon-tell"></use>
-              </svg>
-              <span>+7 (495) 000 52 52</span>
-            </a>
-          </li>
-        </ul>
-        <button class="nav__call">Заказать звонок</button>
+        <a class="nav__link" href="mailto:info@sd.ru" aria-label="Написать нам">
+          <svg width="19" height="14">
+            <use xlink:href="img/sprite_auto.svg#icon-letter"></use>
+          </svg>
+          <span>info@sd.ru</span>
+        </a>
+        <a class="nav__link" href="#" aria-label="Позвонить нам">
+          <svg width="18" height="18">
+            <use xlink:href="img/sprite_auto.svg#icon-tell"></use>
+          </svg>
+          <span>+7 (495) 000 52 52</span>
+        </a>
+        <a class="nav__call button" href="#">Заказать звонок</a>
       </nav>
-      <section class="header__preview preview">
+      <section class="header__preview preview container">
         <h2>Печатные платы</h2>
         <p>Производство и монтаж, поставка комплектующих, блоков и модулей</p>
-        <a class="preview__link" href="#">Получить бесплатную консультацию</a>
-        <a class="preview__link" href="#">Скролл вниз</a>
+        <a class="preview__link preview__link--main button" href="#">Получить бесплатную консультацию</a>
+        <a class="preview__link preview__link--mobile button" href="#">Бесплатная консультация</a>
+        <a class="preview__link-scroll" href="#">Скролл вниз</a>
       </section>
     </header>
     <main class="content">
@@ -140,6 +135,30 @@
     <footer class="footer">
     </footer>
   </div>
+  <div class="popup">
+    <div class="popup__overlay">
+      <div class="popup__form-call form-call">
+        <h2 class="visually-hidden">Форма заказа обратного</h2>
+        <form action="#">
+          <fieldset>
+            <legend>Закажите звонок</legend>
+            <p>Оставьте контакты, мы проконсультируем вас&nbsp;бесплатно в удобное время</p>
+            <input name="name" id="user-name" type="text" placeholder="Имя" aria-label="ВВедите Ваше имя" required="">
+            <input name="tell" id="user-tell" type="text" placeholder="Телефон" aria-label="Введите Ваш номер контактного телефона" required="">
+            <textarea name="user-message" id="user-message" rows="4" placeholder="Ваш вопрос"></textarea>
+            <button class="form-call__submit popup__submit" type="submit">Отправить</button>
+            <div class="form-call__item">
+              <input class="visually-hidden" id="user-agreement" name="agreement" type="checkbox">
+              <label for="user-agreement">Я согласен на обработку персональных данных</label>
+            </div>
+          </fieldset>
+        </form>
+        <button class="form-call__closer popup__button popup__button--closer" type="button" aria-label="Закрыть окно"></button>
+      </div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+  <script src="js/vendor.js"></script>
 </body>
 
 </html>

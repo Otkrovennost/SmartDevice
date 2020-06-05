@@ -1,0 +1,161 @@
+.form-call {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 490px;
+  min-height: 605px;
+  max-height: 100%;
+  padding: 28px 39px;
+  font-family: $font-base;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  background-color: $color-design;
+  transform: translate(-50%, -43%);
+  overflow: auto;
+
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  legend {
+    margin: 0 0 13px 0;
+    font-family: $font-design;
+    font-size: 28px;
+    line-height: 40px;
+    font-weight: 400;
+  }
+
+  p {
+    margin: 0 0 32px 0;
+    padding: 0;
+  }
+
+  input {
+    width: 100%;
+    margin-bottom: 28px;
+    padding: 16px 25px;
+    box-sizing: border-box;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    resize: none;
+    overflow: hidden;
+
+    &:focus,
+    &:hover {
+      border: 1px solid #ffffff;
+      outline: 0;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 36px;
+    padding: 12px 24px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    resize: none;
+    overflow: hidden;
+
+    &:focus,
+    &:hover {
+      border: 1px solid #ffffff;
+      outline: 0;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+.form-call__submit {
+  display: table;
+  width: 100%;
+  margin-bottom: 30px;
+  padding: 14px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.9s;
+
+  &:focus,
+  &:hover {
+    color: $color-design;
+    background-color: #ffffff;
+  }
+}
+
+.form-call__item {
+  position: relative;
+  padding-left: 48px;
+  padding-right: 30px;
+
+  input {
+    width: 0;
+    margin: 0;
+  }
+
+  label {
+    font-size: 14px;
+    line-height: 16px;
+    cursor: pointer;
+  }
+
+  input + label::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #ffffff;
+  }
+
+  input:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/bg/icon-check.svg");
+    background-repeat: no-repeat;
+  }
+
+  input:focus + label,
+  input:hover + label,
+  input:focus + label::before,
+  input:hover + label::before {
+    opacity: 0.6;
+  }
+}
+
+.form-call__closer {
+  top: 15px;
+  right: 13px;
+
+  &::after,
+  &::before {
+    content: "";
+    top: 14px;
+    right: 3px;
+  }
+}

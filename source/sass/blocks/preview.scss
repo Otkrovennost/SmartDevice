@@ -1,0 +1,136 @@
+.preview {
+  padding-top: 229px;
+
+  @media ($tablet) {
+    padding-top: 115px;
+  }
+
+  @media ($mobile) {
+    padding-top: 231px;
+  }
+
+  h2 {
+    width: 75%;
+    margin: 0 0 27px 0;
+    padding: 0;
+    font-family: $font-design;
+    font-weight: 700;
+    font-size: 80px;
+    line-height: 94px;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+
+    @media ($tablet) {
+      width: 55%;
+      margin: 0 0 32px 0;
+      padding: 0 0 0 63px;
+      font-size: 60px;
+      line-height: 70px;
+    }
+
+    @media ($mobile) {
+      width: 90%;
+      margin: 0 0 27px;
+      padding: 0;
+      font-size: 40px;
+      line-height: 47px;
+    }
+  }
+
+  p {
+    position: relative;
+    width: 55%;
+    margin: 0 0 44px 0;
+    padding: 0 0 0 92px;
+    font-size: 22px;
+    line-height: 34px;
+    text-transform: lowercase;
+
+    @media ($tablet) {
+      width: 70%;
+      margin: 0 0 55px 0;
+      padding: 0 0 0 115px;
+      font-size: 18px;
+      line-height: 28px;
+    }
+
+    @media ($mobile) {
+      width: 100%;
+      margin: 0 0 41px;
+      padding: 0 0 0 51px;
+      font-size: 16px;
+      line-height: 25px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 66px;
+      height: 2px;
+      background-color: #ffffff;
+      top: 17px;
+      left: -2px;
+
+      @media ($tablet) {
+        width: 32px;
+        left: 67px;
+      }
+
+      @media ($mobile) {
+        width: 32px;
+        left: 4px;
+      }
+    }
+  }
+}
+
+.preview__link {
+  margin-left: 92px;
+  padding: 17px 46px;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: $color-design;
+  border: none;
+
+  @media ($tablet) {
+    margin-left: 114px;
+    padding: 17px 32px;
+  }
+
+  @media ($mobile) {
+    margin-left: 0;
+    padding: 18px 34px;
+  }
+
+  &--main {
+    @media ($mobile) {
+      display: none;
+    }
+  }
+
+  &--mobile {
+    display: none;
+
+    @media ($mobile) {
+      display: table;
+    }
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-design;
+    background-color: #ffffff;
+  }
+}
+
+.preview__link-scroll {
+  display: table;
+  font-size: 14px;
+  line-height: 16px;
+  opacity: 0.5;
+  transform: translate(-50%, -50%) rotate(-90deg) translate(-142px, 5px);
+
+  @media ($tablet) {
+    display: none;
+  }
+}
