@@ -23,3 +23,22 @@ export const enableScrolling = () => {
   body.removeAttribute(`style`);
   body.classList.remove(`no-scroll`);
 };
+
+export const scrollToContent = () => {
+  const anchors = document.querySelectorAll(`a[href*="#"]`);
+
+  for (let anchor of anchors) {
+    anchor.addEventListener(`click`, function (evt) {
+      evt.preventDefault();
+
+      const blockId = anchor.getAttribute(`href`);
+
+      if (blockId !== `#`) {
+        document.querySelector(`` + blockId).scrollIntoView({
+          behavior: `smooth`,
+          block: `start`
+        });
+      }
+    });
+  }
+};

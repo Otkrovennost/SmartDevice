@@ -1,0 +1,215 @@
+.offers {
+  padding-top: 88px;
+  padding-bottom: 97px;
+  font-family: $font-design;
+  color: $color-white;
+  background-color: #1b2d37;
+
+  @media ($tablet) {
+    padding-top: 48px;
+    padding-bottom: 30px;
+  }
+
+  @media ($mobile) {
+    padding-bottom: 33px;
+  }
+
+  h2 {
+    margin: 0 0 52px 8.5%;
+    padding: 0;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+    color: $color-white;
+
+    @media ($tablet) {
+      margin: 0 0 52px 0;
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    @media ($mobile) {
+      margin: 0 0 42px 10px;
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+}
+
+.offers__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0 8.5%;
+  padding: 0;
+  list-style: none;
+
+  @media ($tablet) {
+    margin: 0;
+  }
+}
+
+.offers__item {
+  position: relative;
+  width: calc(30% - 17px);
+  height: 50vw;
+  max-height: 620px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media ($tablet) {
+    width: 100%;
+    max-height: 256px;
+    margin: 0 0 46px 0;
+  }
+
+  @media ($mobile) {
+    height: 100vw;
+    margin: 0 0 30px 0;
+  }
+
+  &:nth-child(3n) {
+    margin-right: 0;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 63px;
+    height: 63px;
+    right: 0;
+    bottom: 0;
+    background-color: $color-design;
+    background-image: url("../img/bg/icon-arrow.svg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    cursor: pointer;
+  }
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 50px 22% 10% 44px;
+
+    @media ($tablet) {
+      padding: 40px 60% 10% 44px;
+    }
+
+    @media ($mobile) {
+      padding: 19px 22% 10% 35px;
+    }
+
+    &:focus,
+    &:hover {
+      color: $color-design;
+    }
+  }
+
+  &--production {
+    background-image: url("../img/bg/services-image-1-desktop@1x.png");
+
+    @media ($retina) {
+      background-image: url("../img/bg/services-image-1-desktop@2x.png");
+    }
+
+    @media ($tablet) {
+      background-image: url("../img/bg/services-image-1-tablet@1x.png");
+    }
+
+    @media ($tablet) and ($retina) {
+      background-image: url("../img/bg/services-image-1-tablet@2x.png");
+    }
+
+    @media ($mobile) {
+      background-image: url("../img/bg/services-image-1-mobile@1x.png");
+    }
+
+    @media ($mobile) and ($retina) {
+      background-image: url("../img/bg/services-image-1-mobile@2x.png");
+    }
+  }
+
+
+  &--installation {
+    background-image: url("../img/bg/services-image-2-desktop@1x.png");
+
+    @media ($retina) {
+      background-image: url("../img/bg/services-image-2-desktop@2x.png");
+    }
+
+
+    @media ($tablet) {
+      background-image: url("../img/bg/services-image-2-tablet@1x.png");
+    }
+
+    @media ($tablet) and ($retina) {
+      background-image: url("../img/bg/services-image-2-tablet@2x.png");
+    }
+
+    @media ($mobile) {
+      background-image: url("../img/bg/services-image-2-mobile@1x.png");
+    }
+
+    @media ($mobile) and ($retina) {
+      background-image: url("../img/bg/services-image-2-mobile@2x.png");
+    }
+
+    a {
+      padding-right: 37%;
+
+      @media ($tablet) {
+        padding-right: 70%;
+      }
+
+      @media ($mobile) {
+        padding-right: 22%;
+      }
+    }
+  }
+
+  &--spares {
+    background-image: url("../img/bg/services-image-3-desktop@1x.png");
+
+    @media ($retina) {
+      background-image: url("../img/bg/services-image-3-desktop@2x.png");
+    }
+
+
+    @media ($tablet) {
+      background-image: url("../img/bg/services-image-3-tablet@1x.png");
+    }
+
+    @media ($tablet) and ($retina) {
+      background-image: url("../img/bg/services-image-3-tablet@2x.png");
+    }
+
+    @media ($mobile) {
+      background-image: url("../img/bg/services-image-3-mobile@1x.png");
+    }
+
+    @media ($mobile) and ($retina) {
+      background-image: url("../img/bg/services-image-3-mobile@2x.png");
+    }
+
+    a {
+      @media ($tablet) {
+        padding-top: 50px;
+      }
+
+      @media ($mobile) {
+        padding-top: 30px;
+      }
+    }
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 10px 25px 0 rgba(0, 4, 10, 0.5);
+    outline: 0;
+  }
+}

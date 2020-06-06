@@ -67,7 +67,7 @@
       position: absolute;
       width: 66px;
       height: 2px;
-      background-color: #ffffff;
+      background-color: $color-white;
       top: 17px;
       left: -2px;
 
@@ -105,7 +105,7 @@
   &:focus,
   &:hover {
     color: $color-design;
-    background-color: #ffffff;
+    background-color: $color-white;
   }
 }
 

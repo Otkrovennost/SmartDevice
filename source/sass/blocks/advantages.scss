@@ -1,16 +1,19 @@
 .advantages {
   padding-top: 112px;
+  padding-bottom: 86px;
   background-image: url("../img/bg/advantages-bg-triangles.svg");
   background-repeat: no-repeat;
   background-position: center -30px;
 
   @media ($tablet) {
     padding-top: 54px;
+    padding-bottom: 64px;
     background-position: calc(50% + 228px) -87px;
   }
 
   @media ($mobile) {
     padding-top: 37px;
+    padding-bottom: 55px;
     background-position: calc(50% + 120px) 477px;
   }
 }
@@ -33,7 +36,7 @@
   min-height: 299px;
   margin: 0 30px 30px 0;
   padding: 94px 40px 66px 44px;
-  background-color: #ffffff;
+  background-color: $color-white;
   cursor: pointer;
 
   @media ($tablet) {
@@ -124,15 +127,15 @@
   }
 
   &:hover {
-    color: #ffffff;
+    color: $color-white;
     background-color: $color-design;
 
     h3 {
-      color: #ffffff;
+      color: $color-white;
     }
 
     svg {
-      fill: #ffffff;
+      fill: $color-white;
     }
   }
 }
