@@ -102,6 +102,14 @@
     padding: 18px 34px;
   }
 
+  &:focus,
+  &:hover {
+    color: $color-design;
+    background-color: #ffffff;
+  }
+}
+
+.preview__link-text {
   &--main {
     @media ($mobile) {
       display: none;
@@ -112,14 +120,8 @@
     display: none;
 
     @media ($mobile) {
-      display: table;
+      display: block;
     }
-  }
-
-  &:focus,
-  &:hover {
-    color: $color-design;
-    background-color: #ffffff;
   }
 }
 

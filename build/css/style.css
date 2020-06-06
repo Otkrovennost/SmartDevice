@@ -605,17 +605,19 @@ img {
     .preview__link {
       margin-left: 0;
       padding: 18px 34px; } }
-  @media (max-width: 767px) {
-    .preview__link--main {
-      display: none; } }
-  .preview__link--mobile {
-    display: none; }
-    @media (max-width: 767px) {
-      .preview__link--mobile {
-        display: table; } }
   .preview__link:focus, .preview__link:hover {
     color: #00b2ff;
     background-color: #ffffff; }
+
+@media (max-width: 767px) {
+  .preview__link-text--main {
+    display: none; } }
+
+.preview__link-text--mobile {
+  display: none; }
+  @media (max-width: 767px) {
+    .preview__link-text--mobile {
+      display: block; } }
 
 .preview__link-scroll {
   display: table;
@@ -628,6 +630,190 @@ img {
   @media (max-width: 1023px) {
     .preview__link-scroll {
       display: none; } }
+
+.advantages {
+  padding-top: 112px;
+  background-image: url("../img/bg/advantages-bg-triangles.svg");
+  background-repeat: no-repeat;
+  background-position: center -30px; }
+  @media (max-width: 1023px) {
+    .advantages {
+      padding-top: 54px;
+      background-position: calc(50% + 228px) -87px; } }
+  @media (max-width: 767px) {
+    .advantages {
+      padding-top: 37px;
+      background-position: calc(50% + 120px) 477px; } }
+
+.advantages__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0;
+  padding: 0 0 0 120px;
+  list-style: none; }
+  @media (max-width: 1023px) {
+    .advantages__list {
+      padding: 0; } }
+
+.advantages__item {
+  position: relative;
+  width: calc(50% - 75px);
+  min-height: 299px;
+  margin: 0 30px 30px 0;
+  padding: 94px 40px 66px 44px;
+  background-color: #ffffff;
+  cursor: pointer; }
+  @media (max-width: 1023px) {
+    .advantages__item {
+      width: calc(50% - 15px);
+      min-height: 232px;
+      padding: 66px 22px 21px 27px; } }
+  @media (max-width: 767px) {
+    .advantages__item {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 19px;
+      padding: 72px 20px 25px 27px; } }
+  @media (max-width: 767px) {
+    .advantages__item:nth-child(2) {
+      padding-right: 10px; } }
+  .advantages__item:nth-child(2n) {
+    margin-right: 0; }
+    @media (max-width: 767px) {
+      .advantages__item:nth-child(2n) {
+        margin-right: 0; } }
+  .advantages__item::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: #00b2ff; }
+    @media (max-width: 1023px) {
+      .advantages__item::before {
+        width: 2px; } }
+  .advantages__item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #ebebeb; }
+  .advantages__item svg {
+    position: absolute;
+    top: 41px;
+    left: 44px;
+    fill: #00b2ff; }
+    @media (max-width: 1023px) {
+      .advantages__item svg {
+        top: 23px;
+        left: 27px; } }
+  .advantages__item h3 {
+    margin: 0 0 17px 0;
+    padding: 0;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    color: #00b2ff; }
+    @media (max-width: 1023px) {
+      .advantages__item h3 {
+        margin-bottom: 9px; } }
+    @media (max-width: 767px) {
+      .advantages__item h3 {
+        font-size: 20px;
+        line-height: 28px; } }
+  .advantages__item p {
+    margin: 0;
+    padding: 0; }
+  .advantages__item:hover {
+    color: #ffffff;
+    background-color: #00b2ff; }
+    .advantages__item:hover h3 {
+      color: #ffffff; }
+    .advantages__item:hover svg {
+      fill: #ffffff; }
+
+.about-company {
+  min-height: 407px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0 auto;
+  padding: 75px 125px 10px 300px;
+  background-image: url("../img/bg/year-desktop@1x.png");
+  background-repeat: no-repeat;
+  background-position: 92px 80px; }
+  @media (-webkit-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 3/2), (min-resolution: 1.5dppx) {
+    .about-company {
+      background-image: url("../img/bg/year-desktop@2x.png");
+      background-size: 220px; } }
+  @media (max-width: 1023px) {
+    .about-company {
+      min-height: 397px;
+      padding: 25px 5px 10px 188px;
+      background-image: url("../img/bg/year-tablet@1x.png");
+      background-position: -26px 25px; } }
+  @media (max-width: 1023px) and (-webkit-min-device-pixel-ratio: 1.5), (max-width: 1023px) and (-o-min-device-pixel-ratio: 3/2), (max-width: 1023px) and (min-resolution: 1.5dppx) {
+    .about-company {
+      background-image: url("../img/bg/year-tablet@2x.png");
+      background-size: 244px; } }
+  @media (max-width: 767px) {
+    .about-company {
+      min-height: 0;
+      padding: 40px 0 10px 0;
+      background-image: none; } }
+  .about-company h2 {
+    margin: 0 0 0 0;
+    padding: 0;
+    font-family: "Roboto Condensed", "Arial", sans-serif;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px; }
+    @media (max-width: 1023px) {
+      .about-company h2 {
+        font-size: 32px;
+        line-height: 45px; } }
+    @media (max-width: 767px) {
+      .about-company h2 {
+        font-size: 28px;
+        line-height: 40px; } }
+  .about-company p {
+    margin: 20px 0 0 0;
+    padding: 0; }
+    @media (max-width: 1023px) {
+      .about-company p {
+        margin: 25px 0 0 0; } }
+    @media (max-width: 767px) {
+      .about-company p {
+        margin: 20px 0 0 0; } }
+
+@media (max-width: 767px) {
+  .about-company p:nth-of-type(1) {
+    margin-bottom: 41px; } }
+
+@media (max-width: 1023px) {
+  .about-company__info {
+    display: none; } }
+
+.about-company__link {
+  margin-top: 40px;
+  color: #00b2ff;
+  border-color: #00b2ff; }
+  @media (max-width: 1023px) {
+    .about-company__link {
+      margin-top: 36px; } }
+  @media (max-width: 767px) {
+    .about-company__link {
+      margin-top: 27px; } }
+  .about-company__link:focus, .about-company__link:hover {
+    color: #ffffff;
+    background-color: #00b2ff;
+    outline: 0; }
 
 .popup {
   display: none;

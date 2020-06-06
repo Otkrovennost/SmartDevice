@@ -1,0 +1,138 @@
+.advantages {
+  padding-top: 112px;
+  background-image: url("../img/bg/advantages-bg-triangles.svg");
+  background-repeat: no-repeat;
+  background-position: center -30px;
+
+  @media ($tablet) {
+    padding-top: 54px;
+    background-position: calc(50% + 228px) -87px;
+  }
+
+  @media ($mobile) {
+    padding-top: 37px;
+    background-position: calc(50% + 120px) 477px;
+  }
+}
+
+.advantages__list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 0 0 120px;
+  list-style: none;
+
+  @media ($tablet) {
+    padding: 0;
+  }
+}
+
+.advantages__item {
+  position: relative;
+  width: calc(50% - 75px);
+  min-height: 299px;
+  margin: 0 30px 30px 0;
+  padding: 94px 40px 66px 44px;
+  background-color: #ffffff;
+  cursor: pointer;
+
+  @media ($tablet) {
+    width: calc(50% - 15px);
+    min-height: 232px;
+    padding: 66px 22px 21px 27px;
+  }
+
+  @media ($mobile) {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 19px;
+    padding: 72px 20px 25px 27px;
+  }
+
+  &:nth-child(2) {
+    @media ($mobile) {
+      padding-right: 10px;
+    }
+  }
+
+  &:nth-child(2n) {
+    margin-right: 0;
+
+    @media ($mobile) {
+      margin-right: 0;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background-color: $color-design;
+
+    @media ($tablet) {
+      width: 2px;
+    }
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #ebebeb;
+  }
+
+  svg {
+    position: absolute;
+    top: 41px;
+    left: 44px;
+    fill: $color-design;
+
+    @media ($tablet) {
+      top: 23px;
+      left: 27px;
+    }
+  }
+
+  h3 {
+    margin: 0 0 17px 0;
+    padding: 0;
+    font-family: $font-design;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 34px;
+    color: $color-design;
+
+    @media ($tablet) {
+      margin-bottom: 9px;
+    }
+
+    @media ($mobile) {
+      font-size: 20px;
+      line-height: 28px;
+    }
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+
+  &:hover {
+    color: #ffffff;
+    background-color: $color-design;
+
+    h3 {
+      color: #ffffff;
+    }
+
+    svg {
+      fill: #ffffff;
+    }
+  }
+}
