@@ -117,7 +117,7 @@ eval("function _typeof(obj) { \"@babel/helpers - typeof\"; if (typeof Symbol ===
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ \"./node_modules/imask/dist/imask.esm.js\");\n\nvar inputForTel = document.querySelector(\".form-call input[name=tell]\");\n\nif (inputForTel) {\n  var validatePhone = new imask__WEBPACK_IMPORTED_MODULE_0__[\"default\"](inputForTel, {\n    mask: \"+{7}(000)000-00-00\"\n  });\n}\n\n//# sourceURL=webpack:///./source/js/vendor/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var imask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! imask */ \"./node_modules/imask/dist/imask.esm.js\");\n\nvar inputsForTell = document.querySelectorAll(\"input[name=tell]\");\n\nif (inputsForTell) {\n  inputsForTell.forEach(function (input) {\n    var validatePhone = new imask__WEBPACK_IMPORTED_MODULE_0__[\"default\"](input, {\n      mask: \"+{7}(000)000-00-00\"\n    });\n  });\n}\n\n//# sourceURL=webpack:///./source/js/vendor/index.js?");
 
 /***/ })
 

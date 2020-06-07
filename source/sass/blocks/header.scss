@@ -5,12 +5,12 @@
   box-sizing: border-box;
   color: $color-white;
   background-color: #1b2d37;
-  background-image: url("../img/bg/product-header-desktop@1x.png"), url("../img/bg/triangles-header.svg"), url("../img/bg/background-header-desktop@1x.png");
+  background-image: url("../img/bg/product-header-desktop@1x.png"), url("../img/bg/triangles.svg"), url("../img/bg/background-header-desktop@1x.png");
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-position: calc(50% + 430px) 258px, calc(50% + 404px) 117px, center;
 
   @media ($retina) {
-    background-image: url("../img/bg/product-header-desktop@2x.png"), url("../img/bg/triangles-header.svg"), url("../img/bg/background-header-desktop@2x.png");
+    background-image: url("../img/bg/product-header-desktop@2x.png"), url("../img/bg/triangles.svg"), url("../img/bg/background-header-desktop@2x.png");
     background-size: 705px, 673px, 1920px;
   }
 
@@ -25,13 +25,13 @@
   @media ($mobile) {
     padding-top: 16px;
     padding-bottom: 70px;
-    background-image: url("../img/bg/product-header-mobile@1x.png"), url("../img/bg/triangles-header.svg"), url("../img/bg/background-header-desktop@1x.png");
+    background-image: url("../img/bg/product-header-mobile@1x.png"), url("../img/bg/triangles.svg"), url("../img/bg/background-header-desktop@1x.png");
     background-size: 294px, 505px, auto 100%;
     background-position: calc(100% + 0px) 92px, calc(100% + 337px) -46px, center;
   }
 
 
   @media ($mobile) and ($retina) {
-    background-image: url("../img/bg/product-header-mobile@2x.png"), url("../img/bg/triangles-header.svg"), url("../img/bg/background-header-desktop@2x.png");
+    background-image: url("../img/bg/product-header-mobile@2x.png"), url("../img/bg/triangles.svg"), url("../img/bg/background-header-desktop@2x.png");
   }
 }

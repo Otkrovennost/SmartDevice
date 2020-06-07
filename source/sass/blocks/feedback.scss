@@ -1,0 +1,262 @@
+.feedback {
+  color: $color-white;
+  background-color: $color-design;
+  background-image: url("../img/bg/paper-airplane-desktop@1x.png"), url("../img/bg/triangles-feedback.svg"), url("../img/bg/triangles.svg");
+  background-size: 511px, auto, auto;
+  background-position: calc(50% - 356px) 161px, calc(50% + 776px) 40px, calc(50% - 450px) -59px;
+  background-repeat: no-repeat;
+
+  @media ($retina) {
+    background-image: url("../img/bg/paper-airplane-desktop@2x.png"), url("../img/bg/triangles-feedback.svg"), url("../img/bg/triangles.svg");
+  }
+
+  @media ($tablet) {
+    background-image: none;
+  }
+}
+
+.feedback__content {
+  max-width: 1230px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding: 90px 30px 75px;
+
+  @media ($tablet) {
+    padding: 81px 30px 105px;
+  }
+
+  @media ($mobile) {
+    padding: 28px 15px 44px;
+  }
+
+  form {
+    max-width: 570px;
+    margin-left: auto;
+
+    @media ($tablet) {
+      max-width: 100%;
+      width: 83%;
+      margin: 0 auto;
+    }
+
+    @media ($mobile) {
+      max-width: none;
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  legend {
+    width: 100%;
+    margin: 0 0 10px -5px;
+    font-family: $font-design;
+    font-size: 36px;
+    line-height: 51px;
+
+    @media ($tablet) {
+      margin: 0 0 15px 0;
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    @media ($mobile) {
+      margin: 0 0 15px 0;
+      font-size: 28px;
+      line-height: 40px;
+    }
+  }
+
+  span {
+    width: 100%;
+    margin-bottom: 50px;
+
+    @media ($tablet) {
+      margin-bottom: 52px;
+    }
+
+    @media ($mobile) {
+      margin-bottom: 24px;
+    }
+  }
+
+  textarea {
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 42px;
+    padding: 12px 15px 68px 15px;
+    color: $color-white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    resize: none;
+    overflow: hidden;
+
+    @media ($tablet) {
+      padding: 10px 19px 75px;
+    }
+
+    @media ($mobile) {
+      margin-bottom: 32px;
+      padding: 15px;
+    }
+
+    &:focus,
+    &:hover {
+      border: 1px solid $color-white;
+      outline: 0;
+    }
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: $color-white;
+    opacity: 1;
+  }
+}
+
+.feedback__item {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+
+  input {
+    width: calc(50% - 16px);
+    margin-bottom: 40px;
+    padding: 15px;
+    box-sizing: border-box;
+    color: $color-white;
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid transparent;
+    resize: none;
+    overflow: hidden;
+
+    @media ($tablet) {
+      padding: 18px;
+    }
+
+    @media ($mobile) {
+      width: 100%;
+      margin-bottom: 30px;
+      padding: 15px;
+    }
+
+    &:focus,
+    &:hover {
+      border: 1px solid $color-white;
+      outline: 0;
+    }
+  }
+
+  &--submit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    label {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+.feedback__button {
+  padding: 14px 78px;
+
+  @media ($tablet) {
+    padding: 15px 85px;
+  }
+
+  @media ($mobile) {
+    width: 100%;
+    margin-bottom: 26px;
+  }
+
+  &:focus,
+  &:hover {
+    color: $color-design;
+    background-color: $color-white;
+  }
+}
+
+.feedback__agree {
+  position: relative;
+  width: calc(50% - 20px);
+  padding: 0 0 0 33px;
+
+  @media ($tablet) {
+    padding: 0 0 0 40px;
+  }
+
+  @media ($mobile) {
+    padding: 0 0 0 34px;
+    width: 100%;
+  }
+
+  input {
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  label {
+    display: block;
+    padding-top: 8px;
+  }
+
+  input + label::before {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 2px;
+    box-sizing: border-box;
+    width: 16px;
+    height: 16px;
+    border: 1px solid $color-white;
+
+    @media ($tablet) {
+      left: 6px;
+    }
+
+    @media ($mobile) {
+      left: 0;
+      top: 7px;
+    }
+  }
+
+  input:checked + label::after {
+    content: "";
+    position: absolute;
+    top: 16px;
+    left: 5px;
+    width: 16px;
+    height: 16px;
+    background-image: url("../img/bg/icon-check.svg");
+    background-repeat: no-repeat;
+
+    @media ($tablet) {
+      left: 9px;
+    }
+
+    @media ($mobile) {
+      left: 3px;
+      top: 12px;
+    }
+  }
+
+  input:focus + label,
+  input:hover + label,
+  input:focus + label::before,
+  input:hover + label::before {
+    opacity: 0.6;
+  }
+}
