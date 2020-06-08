@@ -1,0 +1,33 @@
+.rights__text {
+  margin-right: 5%;
+
+  @media ($tablet) {
+    display: none;
+  }
+}
+
+.rights__autor {
+  margin-right: 10%;
+
+  @media ($tablet) {
+    display: none;
+  }
+}
+
+.rights__link-security {
+  @media ($mobile) {
+    width: 100%;
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+}
+
+.rights__link-dev {
+  margin-left: auto;
+
+  @media ($mobile) {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+}
