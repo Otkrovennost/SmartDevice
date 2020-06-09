@@ -814,8 +814,15 @@ img {
     margin-bottom: 41px; } }
 
 @media (max-width: 1023px) {
-  .about-company__info {
-    display: none; } }
+  .about-company__text-cut {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4; } }
+
+@media (max-width: 767px) {
+  .about-company__text-cut {
+    -webkit-line-clamp: 8; } }
 
 .about-company__link {
   margin-top: 40px;

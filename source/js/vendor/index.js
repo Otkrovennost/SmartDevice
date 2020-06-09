@@ -1,6 +1,9 @@
 import IMask from 'imask';
+import svg4everybody from 'svg4everybody';
 
 const inputsForTell = document.querySelectorAll(`input[name=tell]`);
+
+svg4everybody();
 
 if (inputsForTell) {
   inputsForTell.forEach(function (input) {

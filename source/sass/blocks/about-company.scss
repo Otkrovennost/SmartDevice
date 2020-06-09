@@ -69,9 +69,16 @@
   }
 }
 
-.about-company__info {
+.about-company__text-cut {
   @media ($tablet) {
-    display: none;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+  }
+
+  @media ($mobile) {
+    -webkit-line-clamp: 8;
   }
 }
 
