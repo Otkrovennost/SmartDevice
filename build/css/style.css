@@ -1462,9 +1462,6 @@ img {
       padding: 28px 0 0 0; } }
   .footer__contacts h3 {
     margin-bottom: 24px; }
-    @media (max-width: 767px) {
-      .footer__contacts h3 {
-        margin-bottom: 33px; } }
 
 .footer__contacts-content {
   display: -webkit-box;
@@ -1488,7 +1485,7 @@ img {
   @media (max-width: 767px) {
     .footer__contacts-content {
       margin: 0 0 25px 0;
-      padding: 0; } }
+      padding: 10px 0 0 0; } }
   .footer__contacts-content p {
     width: 100%;
     margin: 0;

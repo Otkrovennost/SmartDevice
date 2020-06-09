@@ -1,0 +1,23 @@
+@mixin bottom-line {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background-color: $color-gray;
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
+
+@mixin top-line {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 100vw;
+  height: 1px;
+  background-color: $color-gray;
+  opacity: 0.2;
+  transform: translateX(-50%);
+}
