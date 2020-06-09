@@ -1,14 +1,19 @@
-import IMask from 'imask';
+import IMask from "./imask-min.js";
 import svg4everybody from 'svg4everybody';
 
-const inputsForTell = document.querySelectorAll(`input[name=tell]`);
+const inputInFormCall = document.querySelector(`.form-call input[name=tell]`);
+const inputInFeedback = document.querySelector(`.feedback__content input[name=tell]`);
 
 svg4everybody();
 
-if (inputsForTell) {
-  inputsForTell.forEach(function (input) {
-    const validatePhone = new IMask(input, {
-      mask: `+{7}(000)000-00-00`
-    });
+if (inputInFormCall) {
+  const validatePhoneInForm = new IMask(inputInFormCall, {
+    mask: `+{7}(000)000-00-00`
+  });
+}
+
+if (inputInFeedback) {
+  const validatePhoneInFeedback = new IMask(inputInFeedback, {
+    mask: `+{7}(000)000-00-00`
   });
 }

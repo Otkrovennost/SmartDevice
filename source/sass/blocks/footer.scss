@@ -23,6 +23,20 @@
   }
 }
 
+.footer__nav--nojs {
+  .footer__toggler--nav {
+    @media ($mobile) {
+      display: none;
+    }
+  }
+}
+
+.footer__contacts--nojs .footer__toggler--contacts {
+  @media ($mobile) {
+    display: none;
+  }
+}
+
 .footer__nav--closed {
   .footer__nav-list {
     @media ($mobile) {

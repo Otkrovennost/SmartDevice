@@ -3,6 +3,8 @@ const footerNavBlock = footerBlock.querySelector(`.footer__nav`);
 const footerContactsBlock = footerBlock.querySelector(`.footer__contacts`);
 
 export const getDefaultState = () => {
+  footerNavBlock.classList.remove(`footer__nav--nojs`);
+  footerContactsBlock.classList.remove(`footer__contacts--nojs`);
   footerNavBlock.classList.add(`footer__nav--closed`);
   footerContactsBlock.classList.add(`footer__contacts--closed`);
 };

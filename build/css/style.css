@@ -1251,6 +1251,14 @@ img {
     color: #00b2ff; }
 
 @media (max-width: 767px) {
+  .footer__nav--nojs .footer__toggler--nav {
+    display: none; } }
+
+@media (max-width: 767px) {
+  .footer__contacts--nojs .footer__toggler--contacts {
+    display: none; } }
+
+@media (max-width: 767px) {
   .footer__nav--closed .footer__nav-list {
     display: none; } }
 
