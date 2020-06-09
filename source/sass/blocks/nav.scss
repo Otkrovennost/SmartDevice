@@ -60,12 +60,13 @@
   }
 
   svg {
+    fill: $color-design;
+
     @media ($tablet) {
       height: 25px;
       width: 25px;
     }
   }
-
 
   span {
     padding-left: 16px;
@@ -78,7 +79,11 @@
 
   &:focus,
   &:hover {
-    opacity: 0.6;
+    color: $color-design;
+
+    svg {
+      fill: $color-white;
+    }
   }
 }
 

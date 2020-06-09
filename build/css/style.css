@@ -514,10 +514,12 @@ img {
   @media (max-width: 767px) {
     .nav__link {
       margin-left: 23px; } }
-  @media (max-width: 1023px) {
-    .nav__link svg {
-      height: 25px;
-      width: 25px; } }
+  .nav__link svg {
+    fill: #00b2ff; }
+    @media (max-width: 1023px) {
+      .nav__link svg {
+        height: 25px;
+        width: 25px; } }
   .nav__link span {
     padding-left: 16px;
     line-height: 18px; }
@@ -525,7 +527,9 @@ img {
       .nav__link span {
         display: none; } }
   .nav__link:focus, .nav__link:hover {
-    opacity: 0.6; }
+    color: #00b2ff; }
+    .nav__link:focus svg, .nav__link:hover svg {
+      fill: #ffffff; }
 
 .nav__call {
   margin-top: 3px; }
@@ -1338,6 +1342,8 @@ img {
     @media (max-width: 767px) {
       .footer__info a {
         margin: 0; } }
+    .footer__info a:focus, .footer__info a:hover {
+      opacity: 0.6; }
 
 .footer__slogan {
   padding: 7px 0 0 13px; }
@@ -1560,6 +1566,8 @@ img {
       background-color: transparent;
       border: none;
       cursor: pointer; } }
+  .footer__toggler:focus, .footer__toggler:hover {
+    opacity: 0.6; }
 
 @media (max-width: 767px) {
   .footer__nav--closed .footer__toggler--nav::before,

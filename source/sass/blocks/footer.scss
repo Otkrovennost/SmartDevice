@@ -110,6 +110,11 @@
     @media ($mobile) {
       margin: 0;
     }
+
+    &:focus,
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }
 
@@ -346,6 +351,11 @@
     border: none;
     cursor: pointer;
   }
+
+  &:focus,
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 .footer__nav--closed .footer__toggler--nav::before,
@@ -357,7 +367,7 @@
     left: 5px;
     width: 16px;
     height: 2px;
-    background-color: #c4c4c4;
+    background-color: $color-for-nav-btn;
   }
 }
 
@@ -370,7 +380,7 @@
     left: 12px;
     width: 2px;
     height: 16px;
-    background-color: #c4c4c4;
+    background-color: $color-for-nav-btn;
   }
 }
 
@@ -383,6 +393,6 @@
     left: 5px;
     width: 16px;
     height: 2px;
-    background-color: #c4c4c4;
+    background-color: $color-for-nav-btn;
   }
 }
