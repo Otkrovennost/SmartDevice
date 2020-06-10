@@ -20,6 +20,10 @@
     &:hover {
       color: $color-design;
     }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 }
 
@@ -201,6 +205,12 @@
     &:hover {
       svg {
         fill: $color-design;
+      }
+    }
+
+    &:active {
+      svg {
+        opacity: 0.6;
       }
     }
   }

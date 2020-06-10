@@ -60,3 +60,7 @@ export const popupOpenHandler = () => {
   closeByEsc();
   document.addEventListener(`click`, closeOnClickOutsideHandler);
 };
+
+export const submilFormCall = () => {
+  saveInLocalStorage();
+};

@@ -4,9 +4,9 @@
   padding-bottom: 261px;
   box-sizing: border-box;
   color: $color-white;
-  background-color: #1b2d37;
+  background-color: #1b2b37;
   background-image: url("../img/bg/product-header-desktop@1x.png"), url("../img/bg/triangles.svg"), url("../img/bg/background-header-desktop@1x.png");
-  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-repeat: no-repeat, no-repeat, repeat;
   background-position: calc(50% + 430px) 258px, calc(50% + 404px) 117px, center;
 
   @media ($retina) {

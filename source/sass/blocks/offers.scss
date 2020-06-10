@@ -78,10 +78,10 @@
   &::after {
     content: "";
     position: absolute;
-    width: 63px;
-    height: 63px;
     right: 0;
     bottom: 0;
+    width: 63px;
+    height: 63px;
     background-color: $color-design;
     background-image: url("../img/bg/icon-arrow.svg");
     background-repeat: no-repeat;

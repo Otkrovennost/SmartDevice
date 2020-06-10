@@ -1,4 +1,4 @@
-import {popupOpenHandler, saveInLocalStorage} from "./popup.js";
+import {popupOpenHandler, submilFormCall} from "./popup.js";
 import {scrollToContent} from "./scroll.js";
 import {getDefaultState, onClickNavToggler, onClickContactsToggler} from "./footer-menu.js";
 
@@ -20,7 +20,7 @@ if (openUserMessageLink) {
 }
 
 if (submitForm) {
-  submitForm.addEventListener(`submit`, saveInLocalStorage);
+  submitForm.addEventListener(`submit`, submilFormCall);
 }
 
 

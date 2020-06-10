@@ -1,5 +1,7 @@
 html {
   box-sizing: border-box;
+  --lh: 1.4rem;
+  line-height: var(--lh);
 }
 
 *,
