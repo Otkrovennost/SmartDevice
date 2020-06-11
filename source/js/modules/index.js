@@ -8,10 +8,10 @@ const popupCallForm = document.querySelector(`.form-call`);
 const submitForm = popupCallForm.querySelector(`form`);
 const scrollPreviewLink = document.querySelector(`.preview__link-scroll`);
 const footerBlock = document.querySelector(`.footer`);
-const navToggler = footerBlock.querySelector(`.footer__toggler--nav`);
-const contactsToggler = footerBlock.querySelector(`.footer__toggler--contacts`);
 const inputInFormCall = document.querySelector(`.form-call input[name=tell]`);
 const inputInFeedback = document.querySelector(`.feedback__content input[name=tell]`);
+const footerNavToggler = footerBlock.querySelector(`.footer__input--nav`);
+const footerContactsToggler = footerBlock.querySelector(`.footer__input--contacts`);
 
 svg4everybody();
 getDefaultState();
@@ -24,8 +24,8 @@ const validatePhoneInFeedback = new IMask(inputInFeedback, {
   mask: `+{7}(000)000-00-00`
 });
 
-navToggler.addEventListener(`click`, onClickNavToggler);
-contactsToggler.addEventListener(`click`, onClickContactsToggler);
+footerNavToggler.addEventListener(`click`, onClickNavToggler);
+footerContactsToggler.addEventListener(`click`, onClickContactsToggler);
 
 if (openUserMessageLink) {
   openUserMessageLink.addEventListener(`click`, popupOpenHandler);
