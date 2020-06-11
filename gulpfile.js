@@ -41,26 +41,6 @@ const mainWebpackConfig = {
   devtool: isDev ? `eval-sourse-map` : `none`
 };
 
-const vendorWebpackConfig = {
-  output: {
-    filename: `index.js`
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js?$/,
-        exclude: /node_modules/,
-        loader: `babel-loader`,
-        options: {
-          presets: [`@babel/preset-env`]
-        }
-      }
-    ]
-  },
-  mode: isDev ? `development` : `production`,
-  devtool: isDev ? `eval-sourse-map` : `none`
-};
-
 gulp.task(`main`, function () {
   return gulp
     .src(`source/js/modules/index.js`)
@@ -71,9 +51,7 @@ gulp.task(`main`, function () {
 
 gulp.task(`vendor`, function () {
   return gulp
-    .src(`source/js/vendor/index.js`)
-    .pipe(webpack(vendorWebpackConfig))
-    .pipe(rename(`vendor.js`))
+    .src(`source/js/vendor/vendor.js`)
     .pipe(gulp.dest(`build/js/`));
 });
 
