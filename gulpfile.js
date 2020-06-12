@@ -10,11 +10,12 @@ var server = require('browser-sync').create();
 var csso = require('gulp-csso');
 var rename = require('gulp-rename');
 var imagemin = require('gulp-imagemin');
-var concat = require("gulp-concat");
+var concat = require('gulp-concat');
 var webp = require('gulp-webp');
 var svgstore = require('gulp-svgstore');
 var posthtml = require('gulp-posthtml');
 var include = require('posthtml-include');
+var uglify = require('gulp-uglify');
 var del = require('del');
 
 let isDev = true;
@@ -23,6 +24,8 @@ gulp.task('js', function () {
   return gulp
     .src('source/js/main.js')
     .pipe(gulp.dest('build/js'))
+    .pipe(uglify())
+    .pipe(rename({ suffix: '.min' }))
     .pipe(gulp.dest('build/js', { sourcemaps: '.' }));
 });
 
@@ -42,7 +45,7 @@ gulp.task('css', function () {
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest('build/css'))
     .pipe(csso())
     .pipe(rename('style-min.css'))
     .pipe(sourcemap.write('.'))
