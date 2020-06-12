@@ -218,9 +218,9 @@
   list-style: none;
 
   @media ($tablet) {
-    align-content: end;
     width: auto;
     margin: 0 0 0 auto;
+    padding-top: 15px;
   }
 
   @media ($mobile) {

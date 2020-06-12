@@ -1,99 +1,78 @@
-`use strict`;
+'use strict';
 
-const gulp = require(`gulp`);
-const plumber = require(`gulp-plumber`);
-const sourcemap = require(`gulp-sourcemaps`);
-const sass = require(`gulp-sass`);
-const postcss = require(`gulp-postcss`);
-const autoprefixer = require(`autoprefixer`);
-const server = require(`browser-sync`).create();
-const csso = require(`gulp-csso`);
-const rename = require(`gulp-rename`);
-const imagemin = require(`gulp-imagemin`);
-const webp = require(`gulp-webp`);
-const svgstore = require(`gulp-svgstore`);
-const posthtml = require(`gulp-posthtml`);
-const include = require(`posthtml-include`);
-const del = require(`del`);
-const webpack = require(`webpack-stream`);
+var gulp = require('gulp');
+var plumber = require('gulp-plumber');
+var sourcemap = require('gulp-sourcemaps');
+var sass = require('gulp-sass');
+var postcss = require('gulp-postcss');
+var autoprefixer = require('autoprefixer');
+var server = require('browser-sync').create();
+var csso = require('gulp-csso');
+var rename = require('gulp-rename');
+var imagemin = require('gulp-imagemin');
+var concat = require("gulp-concat");
+var webp = require('gulp-webp');
+var svgstore = require('gulp-svgstore');
+var posthtml = require('gulp-posthtml');
+var include = require('posthtml-include');
+var del = require('del');
 
 let isDev = true;
 
-const mainWebpackConfig = {
-  output: {
-    filename: `index.js`
-  },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        loader: `babel-loader`,
-        exclude: /node_modules/,
-        options: {
-          presets: [[`@babel/preset-env`, {
-            "targets": `> 0.25%, not dead`
-          }]]
-        }
-      }
-    ]
-  },
-  mode: isDev ? `development` : `production`,
-  devtool: isDev ? `eval-sourse-map` : `none`
-};
-
-gulp.task(`main`, function () {
+gulp.task('js', function () {
   return gulp
-    .src(`source/js/modules/index.js`)
-    .pipe(webpack(mainWebpackConfig))
-    .pipe(rename(`main.js`))
-    .pipe(gulp.dest(`build/js/`));
+    .src('source/js/main.js')
+    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('build/js', { sourcemaps: '.' }));
 });
 
-gulp.task(`vendor`, function () {
-  return gulp
-    .src(`source/js/vendor/vendor.js`)
-    .pipe(gulp.dest(`build/js/`));
+gulp.task('vendor', function () {
+  return gulp.src([
+    'node_modules/svg4everybody/dist/svg4everybody.min.js',
+    'source/js/vendor.js'
+  ], { sourcemaps: isDev })
+    .pipe(concat('vendor.js'))
+    .pipe(gulp.dest('build/js'));
 });
 
-gulp.task(`css`, function () {
+gulp.task('css', function () {
   return gulp
-    .src(`source/sass/style.scss`)
+    .src('source/sass/style.scss')
     .pipe(plumber())
     .pipe(sourcemap.init())
     .pipe(sass())
     .pipe(postcss([autoprefixer()]))
     .pipe(gulp.dest("build/css"))
     .pipe(csso())
-    .pipe(rename(`style-min.css`))
-    .pipe(sourcemap.write(`.`))
-    .pipe(gulp.dest(`build/css`))
+    .pipe(rename('style-min.css'))
+    .pipe(sourcemap.write('.'))
+    .pipe(gulp.dest('build/css'))
     .pipe(server.stream());
 });
 
-gulp.task(`server`, function () {
+gulp.task('server', function () {
   server.init({
-    server: `build/`,
+    server: 'build/',
     notify: false,
     open: true,
     cors: true,
     ui: false
   });
 
-  gulp.watch(`source/js/modules/index.js`, gulp.series(`main`, `refresh`));
-  gulp.watch(`source/js/vendor/index.js`, gulp.series(`vendor`, `refresh`));
-  gulp.watch(`source/sass/**/*.{scss,sass}`, gulp.series(`css`, `refresh`));
-  gulp.watch(`source/img/**/icon-*.svg`, gulp.series(`sprite`, `html`, `refresh`));
-  gulp.watch(`source/*.html`, gulp.series(`html`, `refresh`));
+  gulp.watch('source/js/**/*.js', gulp.series('js', 'refresh'));
+  gulp.watch('source/sass/**/*.{scss,sass}', gulp.series('css', 'refresh'));
+  gulp.watch('source/img/**/icon-*.svg', gulp.series('sprite', 'html', 'refresh'));
+  gulp.watch('source/*.html', gulp.series('html', 'refresh'));
 });
 
-gulp.task(`refresh`, function (done) {
+gulp.task('refresh', function (done) {
   server.reload();
   done();
 });
 
-gulp.task(`images`, function () {
+gulp.task('images', function () {
   return gulp
-    .src(`source/img/**/*.{png,jpg,svg}`)
+    .src('source/img/**/*.{png,jpg,svg}')
     .pipe(
       imagemin([
         imagemin.optipng({ optimizationLevel: 3 }),
@@ -101,49 +80,49 @@ gulp.task(`images`, function () {
         imagemin.svgo()
       ])
     )
-    .pipe(gulp.dest(`source/img`));
+    .pipe(gulp.dest('source/img'));
 });
 
-gulp.task(`webp`, function () {
+gulp.task('webp', function () {
   return gulp
-    .src(`source/img/content/*.{png,jpg}`)
+    .src('source/img/content/*.{png,jpg}')
     .pipe(webp({ quality: 90 }))
-    .pipe(gulp.dest(`source/img/content/`));
+    .pipe(gulp.dest('source/img/content/'));
 });
 
-gulp.task(`sprite`, function () {
+gulp.task('sprite', function () {
   return gulp
-    .src(`source/img/**/icon-*.svg`)
+    .src('source/img/**/icon-*.svg')
     .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename(`sprite_auto.svg`))
-    .pipe(gulp.dest(`build/img`));
+    .pipe(rename('sprite_auto.svg'))
+    .pipe(gulp.dest('build/img'));
 });
 
-gulp.task(`html`, function () {
+gulp.task('html', function () {
   return gulp
-    .src(`source/*.html`)
+    .src('source/*.html')
     .pipe(posthtml([include()]))
-    .pipe(gulp.dest(`build`));
+    .pipe(gulp.dest('build'));
 });
 
-gulp.task(`copy`, function () {
+gulp.task('copy', function () {
   return gulp
     .src(
       [
-        `source/fonts/**/*.{woff,woff2}`,
-        `source/img/**`,
-        `source//*.ico`
+        'source/fonts/**/*.{woff,woff2}',
+        'source/img/**',
+        'source//*.ico'
       ],
       {
-        base: `source`
+        base: 'source'
       }
     )
-    .pipe(gulp.dest(`build`));
+    .pipe(gulp.dest('build'));
 });
 
-gulp.task(`clean`, function () {
-  return del(`build`);
+gulp.task('clean', function () {
+  return del('build');
 });
 
-gulp.task(`build`, gulp.series(`clean`, `copy`, `css`, `sprite`, `main`, `vendor`, `html`));
-gulp.task(`start`, gulp.series(`build`, `server`));
+gulp.task('build', gulp.series('clean', 'copy', 'css', 'sprite', 'js', 'vendor', 'html'));
+gulp.task('start', gulp.series('build', 'server'));

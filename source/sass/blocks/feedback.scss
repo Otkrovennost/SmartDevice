@@ -96,6 +96,7 @@
     color: $color-white;
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid transparent;
+    border-radius: 0;
     resize: none;
     overflow: hidden;
 
@@ -171,6 +172,7 @@
 }
 
 .feedback__button {
+  order: 1;
   padding: 14px 78px;
 
   @media ($tablet) {
@@ -190,6 +192,7 @@
 }
 
 .feedback__agree {
+  order: 2;
   position: relative;
   width: calc(50% - 20px);
 
