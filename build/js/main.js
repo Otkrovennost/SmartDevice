@@ -22,13 +22,14 @@ var storageMessage = localStorage.getItem('user-message');
 var anchorList = document.querySelectorAll('.anchor-link');
 var anchor;
 
-var validatePhoneInForm = new IMask(inputInFormCall, {
+var validatePhoneInForm = new window.IMask(inputInFormCall, {
   mask: '+{7}(000)000-00-00'
 });
 
-var validatePhoneInFeedback = new IMask(inputInFeedback, {
+var validatePhoneInFeedback = new window.IMask(inputInFeedback, {
   mask: '+{7}(000)000-00-00'
 });
+
 
 // меню-аккордеон в подвале
 
@@ -176,7 +177,7 @@ var submilFormCall = function () {
   saveInLocalStorage();
 };
 
-svg4everybody();
+window.svg4everybody();
 getDefaultState();
 scrollToContent();
 
